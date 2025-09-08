@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  frontend:
+    image: ACR_NAME_PLACEHOLDER.azurecr.io/antony-aakash-s-frontend:latest
+    restart: always
+    depends_on:
+      - backend
+  backend:
+    image: ACR_NAME_PLACEHOLDER.azurecr.io/antony-aakash-s-backend:latest
+    restart: always
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+
+# Notes for Azure App Service (Linux) multi-container:
+# - App Service routes traffic to a container listening on port 80 (our nginx frontend).
+# - Do not publish host ports; internal networking connects frontend -> backend:8000.
+# - Set app settings:
+#     WEBSITES_PORT=80
+#     GEMINI_API_KEY=your_api_key
+# - Provide ACR creds to the web app or use managed identity with ACR Pull role.

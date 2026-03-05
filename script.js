@@ -1,3 +1,23 @@
+// Load section HTML files into the page
+async function loadSections() {
+    const sections = [
+        { id: 'section-profile', file: 'sections/profile.html' },
+        { id: 'section-about', file: 'sections/about.html' },
+        { id: 'section-experience', file: 'sections/experience.html' },
+        { id: 'section-project', file: 'sections/project.html' },
+        { id: 'section-contact', file: 'sections/contact.html' }
+    ];
+
+    await Promise.all(sections.map(async (section) => {
+        const container = document.getElementById(section.id);
+        if (container) {
+            const response = await fetch(section.file);
+            const html = await response.text();
+            container.innerHTML = html;
+        }
+    }));
+}
+
 function toggleMenu(){
     const menu = document.querySelector('.menu-links');
     const icon = document.querySelector('.hamburger-icon');
@@ -150,7 +170,16 @@ function handleMouseUp(event) {
 }
 
 // Initialize touch/swipe functionality when page loads
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Load all sections from separate files first
+    await loadSections();
+
+    // Scroll to hash target if present (for #anchor links)
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView();
+    }
+
     const sliderWrapper = document.querySelector('.slider-wrapper');
     
     if (sliderWrapper) {

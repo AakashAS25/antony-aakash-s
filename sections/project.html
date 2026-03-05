@@ -1,50 +1,120 @@
 <section id="project">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
-    <div class="slider-container">
-        <button class="slider-btn prev-btn" onclick="previousSlide()">❮</button>
-        <div class="slider-wrapper">
-            <div class="slider-track" id="sliderTrack">
-                <div class="slide-group">
-                    <div class="details-container color-container slide">
-                        <div class="article-container">
-                            <img src="./assets/HostelManagement.png" alt="project 1" class="project-img">
-                        </div>
-                        <h2 class="experience-sub-title project-title">Hostel Automation System</h2>
-                        <div class="btn-container">
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AakashAS25/SXCCEHOSTEL'">Github</button>
-                        </div>
-                    </div>
-                    <div class="details-container color-container slide">
-                        <div class="article-container">
-                            <img src="./assets/survey form.png" alt="project 2" class="project-img">
-                        </div>
-                        <h2 class="experience-sub-title project-title">Survey Form Design</h2>
-                        <div class="btn-container">
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-typography-by-building-a-nutrition-label/step-68'">FreeCodeCamp</button>
-                        </div>
-                    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn carousel-btn--left" id="scrollLeft" aria-label="Scroll left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <ul class="carousel-cards" id="carouselCards">
+            <!-- Card 1 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-1.png" alt="Django Attendance Management System">
                 </div>
-                <div class="slide-group">
-                    <div class="details-container color-container slide">
-                        <div class="article-container">
-                            <img src="./assets/djangoCRM.png" alt="project 3" class="project-img">
-                        </div>
-                        <h2 class="experience-sub-title project-title">Django CRM Application</h2>
-                        <div class="btn-container">
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AakashAS25/DjangoCRM'">Github</button>
-                        </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">Django Attendance Management System</h3>
+                        <p class="carousel-card__desc">Full-stack Attendance Management System to streamline employee attendance tracking, leave management, and work-from-home requests with role-based access and admin approval workflows. Built with Django, Python, MySQL, and Tailwind CSS.</p>
                     </div>
-                    <!-- Empty space for future 4th project -->
+                    <a href="https://github.com/AakashAS25/Attendance-Management-System" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
                 </div>
-            </div>
-        </div>
-        <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
-    </div>
-    <div class="slider-dots">
-        <span class="dot active" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+            </li>
+            <!-- Card 2 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-2.png" alt="Dream Degree">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">Dream Degree</h3>
+                        <p class="carousel-card__desc">Smart platform prototype built with Flask that helps students choose the right career path, subject stream, and colleges based on their aptitude, interests, and long-term goals. Features AI-driven personalized recommendations and dynamic assessments.</p>
+                    </div>
+                    <a href="https://github.com/AakashAS25/DreamDegree" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+            <!-- Card 3 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-3.png" alt="NomisView">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">NomisView</h3>
+                        <p class="carousel-card__desc">Real-time Currency Converter Extension designed and developed as a browser extension that eliminates the need for manual currency conversion while shopping globally. Automatically detects foreign currency prices on webpages and converts them to the user's local currency in real-time.</p>
+                    </div>
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/nomisview/" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+            <!-- Card 4 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-4.png" alt="AI Homework Tutor">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">AI Homework Tutor</h3>
+                        <p class="carousel-card__desc">Flask-based AI tutor that guides students step-by-step using Google Gemini. Features real-time session chat, persistent history, and a modern, mobile-friendly interface with secure environment configurations and thoughtful UX touches.</p>
+                    </div>
+                    <a href="https://github.com/AakashAS25/ai-homework-tutor" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+            <!-- Card 5 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-5.png" alt="E-Commerce Microservice">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">E-Commerce Microservice</h3>
+                        <p class="carousel-card__desc">Modular microservices for product, order, and payment management using Flask, ensuring lightweight, maintainable, and scalable service architecture. Includes automated CI/CD pipelines with Jenkins, Docker, and Kubernetes deployment with Helm charts.</p>
+                    </div>
+                    <a href="https://github.com/AakashAS25/E-Commerce-Microservice" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+            <!-- Card 6 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-6.png" alt="Computer Vision for Electric Vehicles">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">Computer Vision for Electric Vehicles (EV)</h3>
+                        <p class="carousel-card__desc">Real-time deep learning system that detects and tracks vehicles, people, and faces in video streams using YOLOv8 and DeepSORT. Includes lane calibration, unique ID assignment for tracked objects, and real-time video processing for driver-assist and safety analytics.</p>
+                    </div>
+                    <a href="https://github.com/AakashAS25/Computer-Vision-For-EV" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+            <!-- Card 7 -->
+            <li class="carousel-card">
+                <div class="carousel-card__visual">
+                    <img class="carousel-card__img" src="./assets/projects/project-1.png" alt="AI Todo Application">
+                </div>
+                <div class="carousel-card__content">
+                    <div class="carousel-card__body">
+                        <h3 class="carousel-card__title">AI Todo Application</h3>
+                        <p class="carousel-card__desc">Full-stack productivity app with a React and Tailwind frontend plus Flask and MongoDB backend. Features secure JWT authentication, CRUD task management, smart search/filter/sort, and Gemini-powered task title autocomplete, description generation, and resource recommendations.</p>
+                    </div>
+                    <a href="https://github.com/AakashAS25/todo-ai" target="_blank" rel="noopener noreferrer" class="carousel-card__link" title="View on GitHub">
+                        <span class="carousel-card__link-text">View Project</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <button class="carousel-btn carousel-btn--right" id="scrollRight" aria-label="Scroll right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
     </div>
     <img src="./assets/arrow.png" alt="arrow icon" class="icon arrow" onclick="location.href='./#contact'">
 </section>
